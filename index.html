@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Math Quest: The Treasure Hunt</title>
+    <title>Math Quest: Treasure Hunt</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="game-container">
-        <h1>Math Quest: The Treasure Hunt 🏴‍☠️</h1>
+        <h1>Math Quest: Treasure Hunt 🏴‍☠️</h1>
         <p class="question" id="question">Loading question...</p>
         <input type="text" id="answer" placeholder="Enter your answer">
         <button onclick="checkAnswer()">Submit</button>
@@ -21,6 +21,12 @@
         <p id="message"></p>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Treasure Sound Effect -->
+    <audio id="treasure-sound">
+        <source src="treasure.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="game.js"></script>
 </body>
 </html>
+
