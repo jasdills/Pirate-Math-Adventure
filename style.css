@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f5f5dc;
+}
+
+.game-container {
+    margin-top: 50px;
+}
+
+input {
+    padding: 10px;
+    font-size: 18px;
+    width: 100px;
+}
+
+button {
+    padding: 10px;
+    font-size: 18px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.game-area {
+    position: relative;
+    width: 80%;
+    height: 200px;
+    margin: 50px auto;
+    background-color: #d4af37;
+    border: 2px solid #000;
+    overflow: hidden;
+}
+
+.character {
+    position: absolute;
+    bottom: 20px;
+    left: 10px;
+    width: 80px;
+}
+
+.treasure {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    width: 80px;
+}
+
+#message {
+    font-size: 24px;
+    font-weight: bold;
+    color: green;
+}
