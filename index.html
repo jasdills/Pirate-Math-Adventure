@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quest: The Treasure Hunt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Math Quest: The Treasure Hunt 🏴‍☠️</h1>
+        <p class="question" id="question">Loading question...</p>
+        <input type="text" id="answer" placeholder="Enter your answer">
+        <button onclick="checkAnswer()">Submit</button>
+
+        <div class="game-area">
+            <img src="character.png" id="character" class="character">
+            <img src="treasure.png" id="treasure" class="treasure">
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
