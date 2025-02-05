@@ -17,11 +17,22 @@ for (let i = 0; i < 100; i++) {
 
 let currentProblem = {};
 let characterPosition = 10;
-const character = document.getElementById("character");
-const message = document.getElementById("message");
-const gameContainer = document.querySelector(".game-container");
-const treasure = document.getElementById("treasure");
-const treasureSound = document.getElementById("treasure-sound"); // Use HTML audio element
+let character, message, gameContainer, treasure, treasureSound;
+
+// Wait until DOM is fully loaded
+document.addEventListener("DOMContentLoaded", () => {
+    character = document.getElementById("character");
+    message = document.getElementById("message");
+    gameContainer = document.querySelector(".game-container");
+    treasure = document.getElementById("treasure");
+    treasureSound = document.getElementById("treasure-sound");
+
+    if (!character || !treasure || !treasureSound) {
+        console.error("Error: One or more elements not found. Check HTML structure.");
+    } else {
+        newProblem();
+    }
+});
 
 // Function to generate a new problem
 function newProblem() {
@@ -35,7 +46,7 @@ function newProblem() {
 function checkAnswer() {
     const userAnswer = document.getElementById("answer").value;
     if (parseInt(userAnswer) === currentProblem.answer) {
-        characterPosition += 120;
+        characterPosition += 150;
         character.style.left = characterPosition + "px";
         
         let treasurePosition = treasure.offsetLeft - 80; // Ensure correct alignment
@@ -74,10 +85,5 @@ function resetGame() {
     document.querySelector(".restart-button").remove();
     newProblem();
 }
-
-// Initialize the game after the DOM is loaded
-document.addEventListener("DOMContentLoaded", () => {
-    newProblem();
-});
 
 
