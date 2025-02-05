@@ -20,12 +20,11 @@ let characterPosition = 10;
 const character = document.getElementById("character");
 const message = document.getElementById("message");
 const gameContainer = document.querySelector(".game-container");
+const treasure = document.getElementById("treasure");
 
 // Load and play treasure sound
 const treasureSound = new Audio("treasure.mp3");
-
 treasureSound.preload = "auto";
-
 treasureSound.volume = 0.8;
 
 // Function to generate a new problem
@@ -40,11 +39,12 @@ function newProblem() {
 function checkAnswer() {
     const userAnswer = document.getElementById("answer").value;
     if (parseInt(userAnswer) === currentProblem.answer) {
-        characterPosition += 100;
+        characterPosition += 120;
         character.style.left = characterPosition + "px";
         
-        if (characterPosition >= 700) { // Adjusted for full reach
-            character.style.left = "700px"; // Ensure full reach
+        let treasurePosition = treasure.offsetLeft - 80; // Ensure correct alignment
+        if (characterPosition >= treasurePosition) { 
+            character.style.left = treasurePosition + "px"; 
             message.textContent = "🎉 You found the treasure! 🎉";
             treasureSound.play();
             character.style.animation = "jump 0.5s infinite alternate";
@@ -79,4 +79,5 @@ function resetGame() {
 document.addEventListener("DOMContentLoaded", () => {
     newProblem();
 });
+
 
