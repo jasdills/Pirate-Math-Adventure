@@ -32,6 +32,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         newProblem();
     }
+
+    // Allow sound play on first user interaction (fixes browser autoplay issue)
+    document.addEventListener("click", () => {
+        treasureSound.play().catch(error => console.log("Sound error (first click):", error));
+    }, { once: true });
 });
 
 // Function to generate a new problem
@@ -85,5 +90,6 @@ function resetGame() {
     document.querySelector(".restart-button").remove();
     newProblem();
 }
+
 
 
