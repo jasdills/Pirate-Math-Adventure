@@ -43,7 +43,8 @@ function checkAnswer() {
         characterPosition += 100;
         character.style.left = characterPosition + "px";
         
-        if (characterPosition >= 600) {
+        if (characterPosition >= 700) { // Adjusted for full reach
+            character.style.left = "700px"; // Ensure full reach
             message.textContent = "🎉 You found the treasure! 🎉";
             treasureSound.play();
             character.style.animation = "jump 0.5s infinite alternate";
@@ -78,3 +79,4 @@ function resetGame() {
 document.addEventListener("DOMContentLoaded", () => {
     newProblem();
 });
+
